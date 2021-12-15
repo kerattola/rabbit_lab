@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @docfile.title %>
+</p>
+
+<%= link_to 'View file', @docfile.file %>
+
+<%= link_to 'Edit', edit_docfile_path(@docfile) %> |
+<%= link_to 'Back', docfiles_path %>
