@@ -28,6 +28,7 @@ class DocfilesController < ApplicationController
         Publisher.publish("docfiles", @docfile.attributes)
         format.html { redirect_to @docfile, notice: "Docfile was successfully created." }
         format.json { render :show, status: :created, location: @docfile }
+        Mapreduce.counter(@docfile.title)
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @docfile.errors, status: :unprocessable_entity }
